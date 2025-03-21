@@ -4,44 +4,26 @@ A simple FastAPI application with a POST route and Braintrust tracing.
 
 ## Setup
 
-1. Create a virtual environment:
-   ```
-   python -m venv venv
-   ```
+Copy the example environment file:
 
-2. Activate the virtual environment:
-   - On Windows:
-     ```
-     venv\Scripts\activate
-     ```
-   - On macOS and Linux:
-     ```
-     source venv/bin/activate
-     ```
+```
+cp .env.example .env
+```
 
-3. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+Edit the `.env` file and add your Braintrust API key:
 
-4. Set up Braintrust:
-   - Copy the example environment file:
-     ```
-     cp .env.example .env
-     ```
-   - Edit the `.env` file and add your Braintrust API key:
-     ```
-     BRAINTRUST_API_KEY=your_actual_api_key_here
-     ```
-   - You can get your API key from [Braintrust Dashboard](https://www.braintrust.dev/).
+```
+BRAINTRUST_API_KEY=your_actual_api_key_here
+```
+
+You can get your API key from [Braintrust Dashboard](https://www.braintrust.dev/).
 
 ## Running the Application
 
 Start the application with Uvicorn:
 
 ```
-cd fastapi_basic_app
-python run.py
+uv run run.py
 ```
 
 The application will be available at http://127.0.0.1:8000
@@ -74,7 +56,7 @@ To create a new item, send a POST request to `/items/` with the following JSON b
 
 ## Braintrust Tracing
 
-This application uses the Braintrust SDK to trace the execution of the `create_item` function. 
+This application uses the Braintrust SDK to trace the execution of the `create_item` function.
 The tracing will:
 
 1. Capture the input data sent to the endpoint
@@ -82,4 +64,4 @@ The tracing will:
 3. Capture the output response
 4. Send the data to your Braintrust project dashboard
 
-You can view the trace data and insights in your Braintrust dashboard at https://app.braintrust.dev. 
+You can view the trace data and insights in your Braintrust dashboard at https://app.braintrust.dev.

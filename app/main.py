@@ -40,8 +40,8 @@ item_counter = 0
 @app.get("/")
 def read_root():
     """Root endpoint returning a welcome message"""
-    with logger.start_span(name="read_root_custom"):
-        current_span().end()
+    #with logger.start_span(name="read_root_custom"):
+    #    current_span().end()
     return {"message": "Welcome to the Basic FastAPI App"}
 
 @app.post("/items/", response_model=ItemResponse)
